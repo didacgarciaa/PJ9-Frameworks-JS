@@ -17,8 +17,14 @@ async function handleLogin(event) {
     }
 
     try {
-        await loginUser(username, password);
-        window.location.href = "dashboardAdmin.html";
+        const user = await loginUser(username, password);  
+        if (user.role === 'admin') {
+            window.location.href = "dashboardAdmin.html"; 
+        } else if (user.role === 'cliente') {
+            window.location.href = "ClientUi.html"; 
+        } else {
+            showMessage("Rol no reconocido", messageElement); 
+        }
     } catch (error) {
         showMessage(error.message || "Credenciales incorrectas", messageElement);
     }
@@ -35,7 +41,9 @@ async function loginUser(username, password) {
         const { error } = await response.json();
         throw new Error(error || "Error en la autenticación");
     }
+    return await response.json(); 
 }
+
 
 function showMessage(message, element) {
     if (element) element.textContent = message;

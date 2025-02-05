@@ -56,31 +56,28 @@ app.post('/user/login', async (req, res) => {
         const client = app.locals.dbClient;
         const db = client.db('PJ9-Database');
         const usersCollection = db.collection('Users-Collection');
-        const collections = await db.listCollections().toArray();
-        console.log('Coleccions disponibles:', collections.map(c => c.name));
 
         const user = await usersCollection.findOne({ name });
         console.log('Resultat de la consulta:', user);
 
         if (!user) {
-            console.log(name);
             return res.status(404).json({ error: 'Usuari no trobat' });
         }
 
-        const match = (password === user.password) ? true : false;
-
+        const match = (password === user.password);
         if (!match) {
             return res.status(401).json({ error: 'Contrasenya incorrecta' });
         }
 
         const { password: userPassword, ...userWithoutPassword } = user;
-        res.json(userWithoutPassword);
+        res.json(userWithoutPassword); 
 
     } catch (error) {
         console.error('Error al buscar el usuari:', error);
         res.status(500).json({ error: 'Error intern del server' });
     }
 });
+
 
 app.post('/user/create', async (req, res) => {
     const { name, password, role } = req.body;
