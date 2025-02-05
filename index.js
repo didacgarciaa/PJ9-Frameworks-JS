@@ -1,4 +1,4 @@
-require('dotenv').config(); // Cargar variables de entorno
+require('dotenv').config();
 
 const express = require('express');
 const { MongoClient, ServerApiVersion } = require('mongodb');
@@ -10,15 +10,15 @@ const username = encodeURIComponent(process.env.DB_USER);
 const password = encodeURIComponent(process.env.DB_PASSWORD);
 const MONGODB_URI = `mongodb+srv://${username}:${password}@pj9-frameworks-js.r6kzs.mongodb.net/?retryWrites=true&w=majority&appName=PJ9-Frameworks-JS`
 
-// Middlewares
-app.use(express.json()); // Permitir recibir JSON en peticiones
-app.use(express.static('public'));
-app.use(cors()); // Habilitar CORS para solicitudes externas
-app.use(morgan('dev')); // Logger para ver las peticiones en la terminal
 
-// Conectar a MongoDB con MongoClient
+app.use(express.json());
+app.use(express.static('public'));
+app.use(cors());
+app.use(morgan('dev'));
+
+
 const connectDB = async () => {
-    const uri = MONGODB_URI; // Usar la URI de la variable de entorno
+    const uri = MONGODB_URI;
 
     const client = new MongoClient(uri, {
         serverApi: {
@@ -29,70 +29,124 @@ const connectDB = async () => {
     });
 
     try {
-        // Conectar el cliente a MongoDB
+
         await client.connect();
 
-        // Comprobar la conexión
-        await client.db("admin").command({ ping: 1 });
-        console.log("✅ Conexión exitosa a MongoDB con MongoClient!");
 
-        // Almacenar el cliente en la aplicación para su uso posterior
+        await client.db("admin").command({ ping: 1 });
+        console.log("Conexió exitosa a MongoDB!");
+
+
         app.locals.dbClient = client;
     } catch (error) {
-        console.error("❌ Error al conectar con MongoDB:", error);
+        console.error("Error al conectar amb MongoDB:", error);
         process.exit(1);
     }
 };
 
 app.post('/user/login', async (req, res) => {
-    const { name, password } = req.body; // Obtener 'nombre' y 'password' desde el cuerpo de la solicitud
-    console.log('Intento de login para:', name); // 🎨
+    const { name, password } = req.body;
+    console.log('Intent de login per a:', name);
 
-    // Validar que ambos campos fueron proporcionados
     if (!name || !password) {
-        return res.status(400).json({ error: 'Nombre y contraseña son requeridos' });
+        return res.status(400).json({ error: "S'han d'introduir nombre, contraseña y rol" });
     }
 
     try {
-        // Obtener el cliente de la base de datos desde app.locals
         const client = app.locals.dbClient;
-        const db = client.db('PJ9-Database'); // Usar la base de datos predeterminada
-        const usersCollection = db.collection('Users-Collection'); // Seleccionar la colección 'Users-Collection'
+        const db = client.db('PJ9-Database');
+        const usersCollection = db.collection('Users-Collection');
         const collections = await db.listCollections().toArray();
-        console.log('Colecciones disponibles:', collections.map(c => c.name));
+        console.log('Coleccions disponibles:', collections.map(c => c.name));
 
-        // Buscar al usuario en la colección por su 'name'
         const user = await usersCollection.findOne({ name });
-        console.log('Resultado de la consulta:', user); // 🎨
+        console.log('Resultat de la consulta:', user);
 
         if (!user) {
             console.log(name);
-            return res.status(404).json({ error: 'Usuario no encontrado' });
+            return res.status(404).json({ error: 'Usuari no trobat' });
         }
 
-        // Comparar la contraseña usando bcrypt
         const match = (password === user.password) ? true : false;
 
         if (!match) {
-            return res.status(401).json({ error: 'Contraseña incorrecta' });
+            return res.status(401).json({ error: 'Contrasenya incorrecta' });
         }
 
-        // Devolver el usuario encontrado (sin la contraseña)
-        const { password: userPassword, ...userWithoutPassword } = user; // Excluir la contraseña del usuario
+        const { password: userPassword, ...userWithoutPassword } = user;
         res.json(userWithoutPassword);
 
     } catch (error) {
-        console.error('❌ Error al buscar el usuario:', error);
-        res.status(500).json({ error: 'Error interno del servidor' });
+        console.error('Error al buscar el usuari:', error);
+        res.status(500).json({ error: 'Error intern del server' });
     }
 });
 
-// Ruta de prueba
-app.get('/', (req, res) => {
-    res.send('🚀 Servidor Express y MongoDB Atlas funcionando correctamente!');
+app.post('/user/create', async (req, res) => {
+    const { name, password, role } = req.body;
+
+    if (!name || !password || !role) {
+        return res.status(400).json({ error: "S'han d'introduir nombre, contraseña y rol" });
+    }
+
+    try {
+        const client = app.locals.dbClient;
+        const db = client.db('PJ9-Database');
+        const usersCollection = db.collection('Users-Collection');
+
+        const existingUser = await usersCollection.findOne({ name });
+        if (existingUser) {
+            return res.status(409).json({ error: 'El usuari ja existeix' });
+        }
+
+        const newUser = { name, role, password };
+        const result = await usersCollection.insertOne(newUser);
+        console.log('Usuari creat:', result.insertedId);
+
+        const users = await usersCollection.find().toArray();
+        console.log('Usuaris a la colección:', users);
+
+        res.status(201).json({ message: 'Usuari creat correctament', userId: result.insertedId });
+
+    } catch (error) {
+        console.error('Error al crear usuario:', error);
+        res.status(500).json({ error: 'Error intern del server' });
+    }
 });
 
-// Iniciar el servidor después de conectar a MongoDB
+
+app.delete('/user/delete', async (req, res) => {
+    const { name } = req.body;
+
+    if (!name || typeof name !== 'string' || name.trim() === '') {
+        return res.status(400).json({ error: "S'ha d'introduir un nom d'usuari" });
+    }
+
+    try {
+        const client = app.locals.dbClient;
+        const db = client.db('PJ9-Database');
+        const usersCollection = db.collection('Users-Collection');
+
+        const result = await usersCollection.deleteOne({ name });
+
+        if (result.deletedCount === 0) {
+            return res.status(404).json({ error: 'Usuari no trobat' });
+        }
+
+        res.json({ message: 'Usuari eliminat correctament' });
+
+    } catch (error) {
+        console.error('Error al eliminar usuari:', error);
+        res.status(500).json({ error: 'Error intern del server' });
+    }
+});
+
+
+
+app.get('/', (req, res) => {
+    res.send('Servidor Express y MongoDB Atlas funcionando correctamente!');
+});
+
 const PORT = process.env.PORT || 3000;
 connectDB().then(() => {
     app.listen(PORT, () => {

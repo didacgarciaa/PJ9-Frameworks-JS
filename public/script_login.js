@@ -1,39 +1,42 @@
-document.getElementById("loginForm").addEventListener("submit", async function(event) {
-    event.preventDefault();
-    const name = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
+document.addEventListener("DOMContentLoaded", () => {
+    const loginForm = document.getElementById("loginForm");
+    if (loginForm) {
+        loginForm.addEventListener("submit", handleLogin);
+    }
+});
 
-    // Validación básica del formulario en el frontend
-    if (!name || !password) {
-        document.getElementById("message").textContent = "Por favor, ingresa el nombre y la contraseña.";
-        return;
+async function handleLogin(event) {
+    event.preventDefault();
+    
+    const username = document.getElementById("username")?.value.trim();
+    const password = document.getElementById("password")?.value.trim();
+    const messageElement = document.getElementById("message");
+
+    if (!username || !password) {
+        return showMessage("Por favor, ingresa el nombre y la contraseña.", messageElement);
     }
 
     try {
-        // Hacer una solicitud POST al backend para validar el usuario
-        const response = await fetch("/user/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                name: name,
-                password: password,
-            }),
-        });
-
-        const data = await response.json();
-
-        if (response.ok) {
-            // Si la respuesta es exitosa, redirigir al dashboard
-            window.location.href = "dashboardAdmin.html";
-        } else {
-            // Si hay un error, mostrar el mensaje de error
-            document.getElementById("message").textContent = data.error || "Credenciales incorrectas";
-        }
+        await loginUser(username, password);
+        window.location.href = "dashboardAdmin.html";
     } catch (error) {
-        // Si hay un error al hacer la solicitud, mostrar un mensaje de error
-        console.error("Error al conectar con el backend:", error);
-        document.getElementById("message").textContent = "Error de conexión con el servidor.";
+        showMessage(error.message || "Credenciales incorrectas", messageElement);
     }
-});
+}
+
+async function loginUser(username, password) {
+    const response = await fetch("/user/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: username, password }),
+    });
+
+    if (!response.ok) {
+        const { error } = await response.json();
+        throw new Error(error || "Error en la autenticación");
+    }
+}
+
+function showMessage(message, element) {
+    if (element) element.textContent = message;
+}
