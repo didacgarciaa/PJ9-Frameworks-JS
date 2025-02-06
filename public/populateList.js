@@ -22,7 +22,10 @@ class PopulateList {
       { name: "Marroc", population: 1800000 },
       { name: "Romania", population: 1300000 },
       { name: "Algèria", population: 900000 },
-      { name: "Xina", population: 850000 }
+      { name: "Xina", population: 85000 },
+      { name: "Pakis", population: 85000 },
+      { name: "Inida", population: 150000 }
+
     ];
     
     this.shuffleAndPopulate();
@@ -75,7 +78,7 @@ class PopulateList {
          countries = savedData.order;
          // Actualiza el estado del botón corazón
          if (this.saveBtn) {
-           this.saveBtn.querySelector("svg").setAttribute("fill", "red");
+           this.saveBtn.querySelector("svg").setAttribute("fill", "#dadada");
            this.saved = true;
          }
       } else {
@@ -93,7 +96,8 @@ class PopulateList {
       li.textContent = name;
       li.className = "drag-item transition-all py-3 px-4 cursor-move bg-white border border-gray-200 rounded-lg shadow";
       li.draggable = true;
-      
+      li.style.color = "#0E1C26";
+
       li.dataset.name = name;
       li.dataset.population = population;
   
@@ -131,17 +135,22 @@ class PopulateList {
       let actualName = item.dataset.name;
       let actualPopulation = item.dataset.population;
   
-      // Muestra "País - Población"
-      item.textContent = `${actualName} - ${actualPopulation}`;
+      // Choose the correct icon (tick or cross)
+      let iconSVG = actualName === expectedCountry.name
+        ? `<svg xmlns="http://www.w3.org/2000/svg" fill="#2A454B" width="20" height="20" viewBox="0 0 24 24" class="ml-auto"><path d="M9 19.5l-6-6 1.5-1.5 4.5 4.5 10.5-10.5 1.5 1.5z"/></svg>`
+        : `<svg xmlns="http://www.w3.org/2000/svg" fill="#2A454B" width="20" height="20" viewBox="0 0 24 24" class="ml-auto"><path d="M12 10.585l-4.95-4.95-1.415 1.414 4.95 4.95-4.95 4.95 1.415 1.415 4.95-4.95 4.95 4.95 1.415-1.415-4.95-4.95 4.95-4.95-1.415-1.414z"/></svg>`;
   
-      // Colorea el fondo según si el país está en la posición correcta
-      if (actualName === expectedCountry.name) {
-        item.style.backgroundColor = "lightgreen";
-      } else {
-        item.style.backgroundColor = "lightcoral";
-      }
+      // Update the list item with flexbox for proper alignment
+      item.innerHTML = `
+        <span style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+          ${actualName} - ${actualPopulation}
+          ${iconSVG}
+        </span>
+      `;
     });
   }
+  
+
 
   saveOrder() {
     let items = Array.from(this.listElement.children);

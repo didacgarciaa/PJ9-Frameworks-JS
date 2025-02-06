@@ -17,29 +17,50 @@
   </style>
 </head>
 <body class="bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861] text-[#DADADA] min-h-screen flex items-center justify-center p-6">
-  <!-- Contenedor principal -->
-  <div class="max-w-md w-full space-y-6">
-    <!-- Muestra el username -->
-    <div id="usernameDisplay" class="text-2xl font-bold text-center"></div>
+  
+  <div class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 justify-start">
     
-    <!-- Lista de países -->
-    <ul id="dragList" class="bg-[#3C596F] rounded-lg shadow p-4 flex flex-col space-y-2">
-      <!-- Los elementos se generarán dinámicamente -->
-    </ul>
-    
-    <!-- Controles: botón de comprobar y el botón con el SVG del corazón -->
-    <div class="flex items-center justify-between">
-      <button id="checkButton" class="bg-[#4E687C] hover:bg-[#294861] transition-colors text-[#DADADA] font-semibold py-2 px-4 rounded">
-        Comprovar Activitat
-      </button>
-      <!-- Botón con el SVG del corazón -->
-      <span id="saveOrderBtn" class="cursor-pointer p-2 bg-[#2A454B] rounded-full hover:bg-[#4E687C] transition-colors">
-        <svg id="heartIcon" class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" 
-                d="M12 21l-1-1C5 14 2 11 2 7a5 5 0 0110 0h0a5 5 0 0110 0c0 4-3 7-9 13l-1 1z"></path>
-        </svg>
-      </span>
+    <!-- Instrucciones -->
+    <div class="space-y-6 flex flex-col">
+      <h2 class="text-3xl mb-8 font-bold ">Com jugar?</h2>
+      <ul class="space-y-4 text-md">
+        <li class="flex items-start justify-start"><span class="font-bold text-[#DADADA] mr-2">1.</span> Llegeix el títol del joc per entendre l'objectiu.</li>
+        <li class="flex items-start justify-start"><span class="font-bold text-[#DADADA] mr-2">2.</span> Arrossega els països de la llista i ordena'ls segons creguis correcte.</li>
+        <li class="flex items-start justify-start"><span class="font-bold text-[#DADADA] mr-2">3.</span> Un cop tinguis l'ordre final, prem el botó "Comprovar Activitat".</li>
+        <li class="flex items-start justify-start"><span class="font-bold text-[#DADADA] mr-2">4.</span> Si vols guardar la teva classificació, prem el cor.</li>
+      </ul>
     </div>
+
+    <!-- Juego -->
+    <div class="space-y-6">
+      
+      <!-- Muestra el username -->
+
+      <!-- Información sobre el juego -->
+   
+
+      <!-- Lista de países -->
+      <ul id="dragList" class="bg-[#3C596F] rounded-lg shadow p-4 flex flex-col space-y-2">
+        <!-- Los elementos se generarán dinámicamente -->
+      </ul>
+      
+      <!-- Controles: botón de comprobar y el botón con el SVG del corazón -->
+      <div class="flex items-center justify-between">
+        <button id="checkButton" class="bg-[#4E687C] hover:bg-[#294861] transition-colors text-[#DADADA] font-semibold py-2 px-4 rounded">
+          Comprovar Activitat
+        </button>
+        <!-- Botón con el SVG del corazón -->
+        <span id="saveOrderBtn" class="cursor-pointer p-2 rounded-full transition-colors">
+          <svg id="heartIcon" class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" 
+                  d="M12 21l-1-1C5 14 2 11 2 7a5 5 0 0110 0h0a5 5 0 0110 0c0 4-3 7-9 13l-1 1z"></path>
+          </svg>
+        </span>
+      </div>
+
+    </div>
+
   </div>
+
 </body>
 </html>
