@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,48 +8,51 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="login.js"></script>
 </head>
-<body class="bg-gradient-to-r from-blue-500 to-purple-600 min-h-screen flex items-center justify-center">
-    <div class="bg-white px-8 pt-6 pb-8 mb-4 rounded-lg shadow-xl w-full max-w-md">
+<header class="fixed top-0 left-0 w-full shadow-md z-10 p-4 bg-gradient-to- from-black">
+    <div class="flex justify-between items-center max-w-4xl mx-auto">
+        <img src="./img/logo-planeta.png" alt="Logo" class="h-14">
+
+        <ul class="flex space-x-4">
+            <li><a href="#" class="hover:text-blue-500">Abu</a></li>
+            <li><a href="#" class="hover:text-blue-500">Cesc</a></li>
+            <li><a href="#" class="hover:text-blue-500">André</a></li>
+            <li><a href="#" class="hover:text-blue-500">Didac</a></li>
+            <li><a href="#" class="hover:text-blue-500">Contacto</a></li>
+        </ul>
+    </div>
+</header>
+<body class="bg-gradient-to-r from-blue-500 to-purple-600 min-h-screen flex items-center justify-center pt-20">
+
+    <div class="px-8 pt-6 pb-8 mb-4 rounded-lg shadow-lg shadow-gray-700 w-full max-w-md -mt-4">
         <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">Iniciar Sesión</h1>
-        
+
         <form id="loginForm" method="POST" class="space-y-4">
             <div>
                 <label for="username" class="block text-gray-700 text-sm font-semibold mb-2">
                     Usuario
                 </label>
-                <input 
-                    type="text" 
-                    id="username" 
-                    name="username" 
-                    required
+                <input type="text" id="username" name="username" required
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Ingresa tu usuario"
-                >
+                    placeholder="Ingresa tu usuario">
             </div>
-            
+
             <div>
                 <label for="password" class="block text-gray-700 text-sm font-semibold mb-2">
                     Contraseña
                 </label>
-                <input 
-                    type="password" 
-                    id="password" 
-                    name="password" 
-                    required
+                <input type="password" id="password" name="password" required
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Ingresa tu contraseña"
-                >
+                    placeholder="Ingresa tu contraseña">
             </div>
-            
-            <button 
-                type="submit" 
-                class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300"
-            >
+
+            <button type="submit"
+                class="w-full bg-purple-600 hover:bg-opacity-60 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300">
                 Ingresar
             </button>
         </form>
-        
+
         <p id="message" class="text-center text-red-500 text-sm mt-4"></p>
     </div>
 </body>
-</html>     
+
+</html>
