@@ -37,7 +37,7 @@ class PopulateList {
          this.saved = !this.saved;
          if (this.saved) {
            // Llenar el corazón de rojo
-           this.saveBtn.querySelector("svg").setAttribute("fill", "red");
+           this.saveBtn.querySelector("svg").setAttribute("fill", "#dadada");
            // Guardar el orden actual en el localStorage
            this.saveOrder();
          } else {

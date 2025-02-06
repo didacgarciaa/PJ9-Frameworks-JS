@@ -1,70 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Dashboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="dashboardAdmin.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
 
-<body class="bg-gray-100">
-  <div class="bg-white min-h-screen">
-    <header class="absolute inset-x-0 top-0 z-50 text-white">
-      <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-        <div class="flex lg:flex-1">
+<header class="fixed top-0 left-0 w-full shadow-md z-10 p-4">
+  <div class="flex justify-between items-center max-w-4xl mx-auto text-[#DADADA]">
+    <h1>ME</h1>
+    <ul class="flex space-x-4">
+      <li>
+        <a href="#" class="relative group">
+          Abu
+          <span
+            class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="relative group">
+          Cesc
+          <span
+            class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="relative group">
+          André
+          <span
+            class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="relative group">
+          Didac
+          <span
+            class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="relative group">
+          Contacto
+          <span
+            class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
 
-        </div>
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" class="text-black text-sm font-semibold ">Logout &rarr;</a>
-        </div>
-      </nav>
-    </header>
+<body class="bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861] min-h-screen font-sans"
+  style="font-family: 'Montserrat', sans-serif;">
+  <div class="pt-20 pb-20 px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
 
-    <main class="pt-20 px-6 lg:px-8">
+      <h1 class="mt-8 text-3xl font-bold text-[#DADADA] mb-8">Hola, Admin</h1>
+      <p class="text-[#DADADA] mb-8">Aquí podrás crear, esborrar i actualizar usuaris.</p>
       <div class="max-w-4xl mx-auto">
-        <h1 class="text-3xl font-semibold text-gray-900">Hola, Admin</h1>
-        <p class="mt-2 text-gray-600">Aquí podrás crear i esborrar usuaris.</p>
-        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="bg-white p-6 rounded-lg shadow flex flex-col h-full">
-            <h2 class="text-xl font-semibold text-gray-900">Crear Usuari</h2>
-            <form id="createUserForm" class="mt-4 flex flex-col flex-grow">
-              <label class="block text-sm font-medium text-gray-700">Nom</label>
-              <input type="text" id="username" class="mt-1 p-2 w-full border rounded-md">
-              <label class="block mt-4 text-sm font-medium text-gray-700">Rol</label>
-              <select id="role" class="mt-1 p-2 w-full border rounded-md">
-                <option value="admin">Admin</option>
-                <option value="cliente">Client</option>
-              </select>
-              <label class="block mt-4 text-sm font-medium text-gray-700">Contrasenya</label>
-              <input type="password" id="password" class="mt-1 p-2 w-full border rounded-md">
-
-
-              <p id="createMessage" class="mt-2 mb-8 text-sm text-gray-600"></p>
-              <button type="submit" class="mt-auto w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-500">
+        <div class="grid grid-cols-2 gap-6">
+          <div class="bg-white px-8 pt-6 pb-8 rounded-lg shadow-lg text-[#0E1C26]">
+            <h2 class="text-2xl font-bold text-center mb-6">Crear Usuari</h2>
+            <form id="createUserForm" class="space-y-4">
+              <div>
+                <label for="username" class="block text-sm font-semibold mb-2">Nom</label>
+                <input type="text" id="username" name="username" required
+                  class="bg-[#DADADA] text-[#2A454B] rounded w-full py-2 px-3 focus:outline-none"
+                  placeholder="Ingresa el nom">
+              </div>
+              <div>
+                <label for="role" class="block text-sm font-semibold mb-2">Rol</label>
+                <select id="role" name="role" class="bg-[#DADADA] rounded w-full py-2 px-3 focus:outline-none">
+                  <option value="admin">Admin</option>
+                  <option value="cliente">Client</option>
+                </select>
+              </div>
+              <div>
+                <label for="password" class="block text-sm font-semibold mb-2">Contrasenya</label>
+                <input type="password" id="password" name="password" required
+                  class="bg-[#DADADA] text-[#2A454B] rounded w-full py-2 px-3 focus:outline-none"
+                  placeholder="Ingresa la contrasenya">
+              </div>
+              <p id="createMessage" class="text-center text-red-500 text-sm"></p>
+              <button type="submit"
+                class="w-full mt-8 bg-[#0E1C26] text-[#DADADA] hover:bg-opacity-90 font-semibold py-2 px-4 rounded-2xl transition duration-300">
                 Crear
               </button>
             </form>
           </div>
 
-
-          <div class="bg-white p-6 rounded-lg shadow flex flex-col h-full">
-            <h2 class="text-xl font-semibold text-gray-900">Esborrar Usuari</h2>
-            <form id="deleteUserForm" class="mt-4 flex flex-col flex-grow">
-              <label class="block text-sm font-medium text-gray-700">Nom</label>
-              <input type="text" id="deleteUsername" class="mt-1 p-2 w-full border rounded-md">
-
-              <p id="deleteMessage" class="mt-2 mb-8 text-sm text-gray-600"></p>
-              <button type="submit" class="mt-auto w-full bg-red-600 text-white mt-10 py-2 rounded-md hover:bg-red-500">
-                Esborrar
+          <div class="bg-white px-8 pt-6 pb-8 rounded-lg shadow-lg text-[#0E1C26]">
+            <h2 class="text-2xl font-bold text-center mb-6">Actualizar Usuari</h2>
+            <form id="updateUserForm" class="space-y-4">
+              <div>
+                <label for="updateUsername" class="block text-sm font-semibold mb-2">Nom</label>
+                <input type="text" id="updateUsername" name="updateUsername" required
+                  class="bg-[#DADADA] rounded w-full py-2 px-3 focus:outline-none" placeholder="Ingresa el nom">
+              </div>
+              <div>
+                <label for="updateRole" class="block text-sm font-semibold mb-2">Nou Rol</label>
+                <select id="updateRole" name="updateRole"
+                  class="bg-[#DADADA] rounded w-full py-2 px-3 focus:outline-none">
+                  <option value="admin">Admin</option>
+                  <option value="cliente">Client</option>
+                </select>
+              </div>
+              <div>
+                <label for="updatePassword" class="block text-sm font-semibold mb-2">Nova Contrasenya</label>
+                <input type="password" id="updatePassword" name="updatePassword" required
+                  class="bg-[#DADADA] text-[#2A454B] rounded w-full py-2 px-3 focus:outline-none"
+                  placeholder="Ingresa la nova contrasenya">
+              </div>
+              <p id="updateMessage" class="text-center text-red-500 text-sm"></p>
+              <button type="submit"
+                class="w-full mt-8 bg-[#0E1C26] text-[#DADADA] hover:bg-opacity-90 font-semibold py-2 px-4 rounded-2xl transition duration-300">
+                Actualitzar
               </button>
             </form>
           </div>
 
+          <div class="bg-white px-8 pt-6 pb-6 rounded-lg shadow-lg text-[#0E1C26] col-span-2">
+            <h2 class="text-2xl font-bold mb-6">Esborrar Usuari</h2>
+            <form id="deleteUserForm" class="space-y-4">
+              <div class="flex items-center space-x-4"> <!-- Flex container with spacing -->
+                <div class="w-full">
+                  <label for="deleteUsername" class="block text-sm font-semibold mb-2">Nom</label>
+                  <div class="flex items-center space-x-4"> <!-- Align input and button in the same row -->
+                    <input type="text" id="deleteUsername" name="deleteUsername" required
+                      class="bg-[#DADADA] rounded w-full py-2 px-3 focus:outline-none"
+                      placeholder="Ingresa el nom">
+                    <button type="submit"
+                      class="bg-[#0E1C26] text-[#DADADA] hover:bg-opacity-90 font-semibold py-2 px-4 rounded-2xl transition duration-300">
+                      Esborrar
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <p id="deleteMessage" class="text-center text-red-500 text-sm"></p>
+            </form>
+          </div>
+          
         </div>
       </div>
-    </main>
+    </div>
   </div>
 </body>
 

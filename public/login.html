@@ -7,46 +7,69 @@
     <title>Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="login.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-<header class="fixed top-0 left-0 w-full shadow-md z-10 p-4 bg-gradient-to- from-black">
-    <div class="flex justify-between items-center max-w-4xl mx-auto">
-        <img src="./img/logo-planeta.png" alt="Logo" class="h-14">
-
-        <ul class="flex space-x-4">
-            <li><a href="#" class="hover:text-blue-500">Abu</a></li>
-            <li><a href="#" class="hover:text-blue-500">Cesc</a></li>
-            <li><a href="#" class="hover:text-blue-500">André</a></li>
-            <li><a href="#" class="hover:text-blue-500">Didac</a></li>
-            <li><a href="#" class="hover:text-blue-500">Contacto</a></li>
-        </ul>
+<header class="fixed top-0 left-0 w-full shadow-md z-10 p-4">
+    <div class="flex justify-between items-center max-w-4xl mx-auto text-[#DADADA]">
+      <h1 class="">ME</h1>
+  
+      <ul class="flex space-x-4">
+        <li>
+          <a href="#" class="relative group ">
+            Abu
+            <span class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="relative group ">
+            Cesc
+            <span class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="relative group">
+            André
+            <span class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="relative group">
+            Didac
+            <span class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+          </a>
+        </li>
+        <li>    
+          <a href="#" class="relative group">
+            Contacto
+            <span class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+          </a>
+        </li>
+      </ul>
     </div>
-</header>
-<body class="bg-gradient-to-r from-blue-500 to-purple-600 min-h-screen flex items-center justify-center pt-20">
+  </header>
+  
+<body class="bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861] min-h-screen flex items-center justify-center pt-20 font-sans" style="font-family: 'Montserrat', sans-serif;">
 
-    <div class="px-8 pt-6 pb-8 mb-4 rounded-lg shadow-lg shadow-gray-700 w-full max-w-md -mt-4">
-        <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">Iniciar Sesión</h1>
+    <div class="px-8 pt-6 pb-8 mb-4 rounded-lg shadow-lg w-full mt-4 max-w-md">
+        <h1 class="text-3xl font-bold text-[#DADADA] mb-8 text-center">Iniciar Sesión</h1>
 
         <form id="loginForm" method="POST" class="space-y-4">
             <div>
-                <label for="username" class="block text-gray-700 text-sm font-semibold mb-2">
-                    Usuario
-                </label>
+                <label for="username" class="block text-[#DADADA] text-sm font-semibold mb-2">Usuario</label>
                 <input type="text" id="username" name="username" required
-                    class="shadow appearance-none bg-[#BBC4FF] rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    class="bg-[#DADADA] text-[#2A454B] rounded w-full py-2 px-3 focus:outline-none"
                     placeholder="Ingresa tu usuario">
             </div>
 
             <div>
-                <label for="password" class="block text-gray-700 text-sm font-semibold mb-2">
-                    Contraseña
-                </label>
+                <label for="password" class="block text-[#DADADA] text-sm font-semibold mb-2">Contraseña</label>
                 <input type="password" id="password" name="password" required
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    class="bg-[#DADADA] text-[#2A454B] rounded w-full py-2 px-3 focus:outline-none"
                     placeholder="Ingresa tu contraseña">
             </div>
 
             <button type="submit"
-                class="w-full bg-purple-600 hover:bg-opacity-60 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300">
+                class="w-full !mt-14 bg-[#DADADA] hover:bg-opacity-60 text-[#2A454B] font-semibold py-2 px-4 rounded-2xl transition duration-300">
                 Ingresar
             </button>
         </form>
