@@ -18,10 +18,14 @@ async function handleLogin(event) {
 
     try {
         const user = await loginUser(username, password);  
+        localStorage.setItem('username', username); // Store username
+        console.log(localStorage.getItem('username')); // Should show the username
+
         if (user.role === 'admin') {
             window.location.href = "dashboardAdmin.html"; 
         } else if (user.role === 'cliente') {
             window.location.href = "ClientUi.html"; 
+            
         } else {
             showMessage("Rol no reconegut", messageElement); 
         }
