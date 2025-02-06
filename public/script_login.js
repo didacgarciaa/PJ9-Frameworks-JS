@@ -23,10 +23,10 @@ async function handleLogin(event) {
         } else if (user.role === 'cliente') {
             window.location.href = "ClientUi.html"; 
         } else {
-            showMessage("Rol no reconocido", messageElement); 
+            showMessage("Rol no reconegut", messageElement); 
         }
     } catch (error) {
-        showMessage(error.message || "Credenciales incorrectas", messageElement);
+        showMessage(error.message || "Credencials incorrectes", messageElement);
     }
 }
 
