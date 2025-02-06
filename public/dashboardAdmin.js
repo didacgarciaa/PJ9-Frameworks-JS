@@ -8,6 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
         createUserForm(name,role,password);
         
     });
+
+    document.getElementById("updateUserForm").addEventListener("submit", async function(event) {
+        event.preventDefault();
+        const name  = document.getElementById("updateUsername").value.trim();
+        const role = document.getElementById("updateRole").value;
+        const password = document.getElementById("updatePassword").value.trim();
+        if (!name || !password) return showMessage("Emplena tots els camps", "updateMessage");
+        updateUserForm(name,role,password);
+        
+    });
     
     document.getElementById("deleteUserForm").addEventListener("submit", async function(event) {
         event.preventDefault();
@@ -52,5 +62,22 @@ async function createUserForm(name, role, password) {
         showMessage(result.message || "Usuari creat correctament", "createMessage");
     } catch (error) {   
         showMessage("Error", "createMessage");
+    }
+}
+
+async function updateUserForm(name, role, password) {
+    try {
+        const response = await fetch("/user/update", {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, role, password })
+        });
+        if (!response.ok) {
+            throw new Error(`Error del servidor: ${response.status}`);
+        }
+        const result = await response.json();
+        showMessage(result.message || "Usuari actualitzat correctament", "updateMessage");
+    } catch (error) {
+        showMessage("Error", "updateMessage");
     }
 }
