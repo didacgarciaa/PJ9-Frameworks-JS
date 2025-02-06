@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag & Drop POO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module">
+    import './populateList.js';
+  </script>
+  <style>
+    .dragging {
+      opacity: 0.5;
+    }
+
+    .over {
+      border: 2px dashed #d1d5db;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 p-6">
+  <ul id="dragList" class="max-w-xs flex flex-col space-y-1"></ul>
+  <button id="checkButton" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded shadow">Comprovar Activitat</button>
+</body>
+
+</html>
