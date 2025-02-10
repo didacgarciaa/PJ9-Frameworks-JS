@@ -111,6 +111,38 @@ app.post('/user/create', async (req, res) => {
     }
 });
 
+app.put('/user/update', async (req, res) => {
+    const { name, password, role } = req.body;
+
+    if (!name || !password || !role) {
+        return res.status(400).json({ error: "S'han d'introduir nombre, contraseña y rol" });
+    }
+
+    try {
+        const client = app.locals.dbClient;
+        const db = client.db('PJ9-Database');
+        const usersCollection = db.collection('Users-Collection');
+
+        const user = await usersCollection.findOne({ name });
+        if (!user) {
+            return res.status(404).json({ error: 'Usuari no trobat' });
+        }
+
+        const updatedUser = { name, password, role };
+        const result = await usersCollection.updateOne({ name }, { $set: updatedUser });
+
+        if (result.matchedCount === 0) {
+            return res.status(404).json({ error: 'Usuari no trobat' });
+        }
+
+        res.json({ message: 'Usuari actualitzat correctament' });
+
+    } catch (error) {
+        console.error('Error al actualitzar usuari:', error);
+        res.status(500).json({ error: 'Error intern del server' });
+    }
+});
+
 
 app.delete('/user/delete', async (req, res) => {
     const { name } = req.body;
@@ -147,6 +179,6 @@ app.get('/', (req, res) => {
 const PORT = process.env.PORT || 3000;
 connectDB().then(() => {
     app.listen(PORT, () => {
-        console.log(`✅ Servidor corriendo en http://localhost:${PORT}/login.html`);
+        console.log(`✅ Servidor corriendo en http://localhost:${PORT}/landing.html`);
     });
 });
