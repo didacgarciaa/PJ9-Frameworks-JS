@@ -18,14 +18,13 @@ class PopulateList {
 
     // Orden correcta (la posición ideal de cada país)
     this.correctOrder = [
-      { name: "Turquia", population: 2500000 },
-      { name: "Marroc", population: 1800000 },
-      { name: "Romania", population: 1300000 },
-      { name: "Algèria", population: 900000 },
-      { name: "Xina", population: 85000 },
-      { name: "Pakis", population: 85000 },
-      { name: "Inida", population: 150000 }
-
+      { name: "Turquia", population: 5000000 },    // Turkey: ~5 million
+      { name: "Marroc", population: 4500000 },     // Morocco: ~4.5 million
+      { name: "Romania", population: 3400000 },    // Romania: ~3.4 million
+      { name: "Algèria", population: 2500000 },    // Algeria: ~2.5 million
+      { name: "Inida", population: 1800000 },      // India: ~1.8 million
+      { name: "Xina", population: 1500000 },       // China: ~1.5 million
+      { name: "Pakis", population: 1300000 }       // Pakistan: ~1.3 million
     ];
     
     this.shuffleAndPopulate();
