@@ -1,0 +1,40 @@
+{
+    "barChart": {
+        "labels": ["España", "Italia", "Alemania", "Francia", "Grecia"],
+        "datasets": [
+            {
+                "label": "Personas que emigran",
+                "data": [500000, 450000, 600000, 300000, 250000],
+                "backgroundColor": "rgba(255, 99, 132, 0.5)"
+            },
+            {
+                "label": "Personas que llegan",
+                "data": [200000, 150000, 300000, 100000, 80000],
+                "backgroundColor": "rgba(54, 162, 235, 0.5)"
+            }
+        ]
+    },
+    "lineChart": {
+        "labels": ["2000", "2005", "2010", "2015", "2020"],
+        "datasets": [
+            {
+                "label": "Población de Italia",
+                "data": [57000000, 56000000, 55000000, 54000000, 53000000],
+                "borderColor": "rgba(255, 206, 86, 1)",
+                "fill": false
+            },
+            {
+                "label": "Población de España",
+                "data": [46000000, 45000000, 44000000, 43000000, 42000000],
+                "borderColor": "rgba(75, 192, 192, 1)",
+                "fill": false
+            },
+            {
+                "label": "Población de Alemania",
+                "data": [82000000, 81000000, 80000000, 79000000, 78000000],
+                "borderColor": "rgba(153, 102, 255, 1)",
+                "fill": false
+            }
+        ]
+    }
+}

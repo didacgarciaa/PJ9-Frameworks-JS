@@ -179,6 +179,6 @@ app.get('/', (req, res) => {
 const PORT = process.env.PORT || 3000;
 connectDB().then(() => {
     app.listen(PORT, () => {
-        console.log(`✅ Servidor corriendo en http://localhost:${PORT}/login.html`);
+        console.log(`✅ Servidor corriendo en http://localhost:${PORT}/landing.html`);
     });
 });
