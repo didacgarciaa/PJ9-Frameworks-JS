@@ -57,8 +57,8 @@
         l'emigració i la baixa taxa de natalitat. Quines són les conseqüències?</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        <img src="img/world-map.jpg" alt="Imatge 1" class="rounded-lg shadow-lg">
-        <img src="img/banner-provisional.jpg" alt="Imatge 2" class="rounded-lg shadow-lg">
+          <img src="img/world-map.jpg" alt="Imatge 1" class="rounded-lg shadow-lg w-full h-full object-cover">
+          <img src="img/banner-provisional.jpg" alt="Imatge 2" class="rounded-lg shadow-lg w-full h-full object-cover">
       </div>
 
       <div id="resum" class="mb-6">
@@ -129,6 +129,7 @@
             },
             data: [
               {
+                color: "#50C878",
                 type: "column",
                 name: "Emigran",
                 showInLegend: true,
@@ -138,6 +139,7 @@
                 }))
               },
               {
+                color: "#F0FFF0",
                 type: "column",
                 name: "Llegan",
                 showInLegend: true,
@@ -170,6 +172,7 @@
               labelFontColor: "#DADADA"
             },
             data: data.lineChart.datasets.map(dataset => ({
+              color: "#50C878",
               type: "line",
               showInLegend: true,
               name: dataset.label,
@@ -200,6 +203,7 @@
               labelFontColor: "#DADADA"
             },
             data: [{
+              color: "#50C878",
               type: "column",
               dataPoints: [
                 { label: "Alemania", y: 31.4 },
