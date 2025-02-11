@@ -111,33 +111,93 @@
           new CanvasJS.Chart("barChart", {
             animationEnabled: true,
             theme: "light2",
-            title: { text: "Personas que emigran vs. llegan" },
-            axisY: { title: "Cantidad de Personas" },
+            backgroundColor: "transparent",
+            title: {
+              text: "Personas que emigran vs. llegan",
+              fontColor: "#DADADA"
+            },
+            legend: {
+              fontColor: "#DADADA"
+            },
+            axisY: {
+              title: "Cantidad de Personas",
+              titleFontColor: "#DADADA",
+              labelFontColor: "#DADADA"
+            },
+            axisX: {
+              labelFontColor: "#DADADA"
+            },
             data: [
-              { type: "column", name: "Emigran", showInLegend: true, dataPoints: data.barChart.datasets[0].data.map((val, i) => ({ label: data.barChart.labels[i], y: val })) },
-              { type: "column", name: "Llegan", showInLegend: true, dataPoints: data.barChart.datasets[1].data.map((val, i) => ({ label: data.barChart.labels[i], y: val })) }
+              {
+                type: "column",
+                name: "Emigran",
+                showInLegend: true,
+                dataPoints: data.barChart.datasets[0].data.map((val, i) => ({
+                  label: data.barChart.labels[i],
+                  y: val
+                }))
+              },
+              {
+                type: "column",
+                name: "Llegan",
+                showInLegend: true,
+                dataPoints: data.barChart.datasets[1].data.map((val, i) => ({
+                  label: data.barChart.labels[i],
+                  y: val
+                }))
+              }
             ]
           }).render();
+
 
           new CanvasJS.Chart("lineChart", {
             animationEnabled: true,
             theme: "light2",
-            title: { text: "Tendencia de la población en declive" },
-            axisY: { title: "Población" },
+            backgroundColor: "transparent",
+            title: {
+              text: "Tendencia de la población en declive",
+              fontColor: "#DADADA"
+            },
+            legend: {
+              fontColor: "#DADADA"
+            },
+            axisY: {
+              title: "Población",
+              titleFontColor: "#DADADA",
+              labelFontColor: "#DADADA"
+            },
+            axisX: {
+              labelFontColor: "#DADADA"
+            },
             data: data.lineChart.datasets.map(dataset => ({
               type: "line",
               showInLegend: true,
               name: dataset.label,
-              dataPoints: dataset.data.map((val, i) => ({ label: data.lineChart.labels[i], y: val }))
+              dataPoints: dataset.data.map((val, i) => ({
+                label: data.lineChart.labels[i],
+                y: val
+              }))
             }))
           }).render();
+
         }
 
         window.onload = function () {
           var chart = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,
+            backgroundColor: "transparent",
+            theme: "light2",
             title: {
-              text: "Solicitudes de Asilo en la UE (2023)"
+              text: "Solicitudes de Asilo en la UE (2023)",
+              fontColor: "#DADADA"
+            },
+            axisY: {
+              title: "Cantidad (%)",
+              titleFontColor: "#DADADA",
+              labelFontColor: "#DADADA"
+            },
+            axisX: {
+              labelFontColor: "#DADADA"
             },
             data: [{
               type: "column",
@@ -151,6 +211,7 @@
             }]
           });
           chart.render();
+
 
           loadChartData();
         }
