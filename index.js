@@ -34,12 +34,12 @@ const connectDB = async () => {
 
 
         await client.db("admin").command({ ping: 1 });
-        console.log("Conexió exitosa a MongoDB!");
+        console.log("Conexió exitosa!");
 
 
         app.locals.dbClient = client;
     } catch (error) {
-        console.error("Error al conectar amb MongoDB:", error);
+        console.error("Error al conectar:", error);
         process.exit(1);
     }
 };
@@ -179,6 +179,6 @@ app.get('/', (req, res) => {
 const PORT = process.env.PORT || 3000;
 connectDB().then(() => {
     app.listen(PORT, () => {
-        console.log(`✅ Servidor corriendo en http://localhost:${PORT}/landing.html`);
+        console.log(`Servidor disponible a http://localhost:${PORT}/landing.html`);
     });
 });
