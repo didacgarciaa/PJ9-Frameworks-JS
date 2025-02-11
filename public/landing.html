@@ -9,89 +9,147 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861] min-h-screen flex flex-col font-sans text-[#DADADA]">
+<body
+  class="bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861] min-h-screen flex flex-col font-sans text-[#DADADA]"
+  style="font-family: 'Montserrat', sans-serif;">
 
-  <!-- Header -->
-  <header class="fixed top-0 left-0 w-full shadow-md z-10 p-4 bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861]">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-xl font-bold">Migración en Europa</h1>
-      <button onclick="window.location.href='login.html'" class="bg-[#DADADA] text-[#2A454B] font-semibold py-2 px-4 rounded-2xl transition duration-300 hover:bg-opacity-60">
-        Login
-      </button>
+  <header class="bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861] fixed top-0 left-0 w-full shadow-md z-10 p-4">
+    <div class="flex justify-between items-center max-w-4xl mx-auto text-[#DADADA]">
+      <h1>ME</h1>
+      <ul class="flex space-x-4">
+        <li>
+          <a href="#" class="relative group">
+            Abu
+            <span
+              class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="relative group">
+            Cesc
+            <span
+              class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="relative group">
+            André
+            <span
+              class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="relative group">
+            Didac
+            <span
+              class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="relative group">
+            Contacto
+            <span
+              class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+          </a>
+        </li>
+      </ul>
     </div>
   </header>
-
-  <!-- Main Content -->
-  <main class="container mx-auto text-center mt-24 p-6">
-
-    <!-- Welcome Section -->
-    <section class="bg-[#2a454b] p-6 rounded-lg shadow-lg">
-      <h1 class="text-4xl font-bold mb-4">Bienvenido al análisis sobre migración en Europa</h1>
-      <p class="text-lg">Este proyecto analiza cómo la migración ha impactado a los países europeos en los últimos años, explorando sus causas, efectos y tendencias.</p>
+    <section class="relative w-screen h-screen flex items-center justify-center text-center">
+      <div class="absolute inset-0 bg-[url('./img/migracion2.png')] bg-cover bg-center w-full h-full"></div>
+      <div class="absolute inset-0 bg-black bg-opacity-50 w-full h-full"></div>
+      <div class="relative text-[#DADADA] px-6">
+        <h1 class="text-6xl font-extrabold mb-14">
+          Migración en Europa
+        </h1>
+        <p class="text-xl mb-6 max-w-3xl mx-auto">
+          La migración ha transformado Europa, influyendo en su economía, cultura y sociedad.  
+          Millones de personas han dejado sus países en busca de oportunidades, generando cambios a gran escala.
+        </p>
+        <button onclick="window.location.href='login.html'"
+          class=" w-40 bg-[#DADADA] text-[#2A454B] font-semibold py-3 px-6 rounded-full shadow-lg transition-transform transform hover:scale-105 hover:bg-opacity-60">
+          Login
+        </button>
+      </div>
     </section>
-
-    <!-- Information Boxes -->
-    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-
-      <!-- Box 1: Causas -->
+    <section class="max-w-[70%] mx-auto mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       <div class="bg-[#2a454b] p-6 rounded-lg shadow-lg">
-        <img src="./img/Causa.png" alt="Factores que causan la emigración en Europa" class="w-full h-40 object-cover rounded-lg mb-4">
-        <h2 class="text-xl font-bold">Causas</h2>
-        <p class="mt-2 text-sm">Crisis económica, conflictos políticos y falta de empleo en algunos países europeos han impulsado la emigración.</p>
+        <img src="./img/Causa.png" alt="Factores que causan la emigración en Europa"
+          class="w-full h-40 object-cover rounded-lg mb-6">
+        <h2 class="text-lg font-bold">Causas</h2>
+        <p class="mt-2 text-base">Factores como crisis económica y conflictos políticos impulsan la emigración.</p>
+        <a href="login.html" class="relative group inline-block mt-3 text-[#DADADA] font-semibold">
+          Leer más
+          <span
+            class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-100 transition-transform duration-300 group-hover:scale-x-0">
+          </span>
+        </a>
       </div>
-
-      <!-- Box 2: Países con Mayor Emigración -->
       <div class="bg-[#2a454b] p-6 rounded-lg shadow-lg">
-        <img src="./img/Pais.png" alt="Países europeos con mayor índice de emigración" class="w-full h-40 object-cover rounded-lg mb-4">
-        <h2 class="text-xl font-bold">Países con más emigración</h2>
-        <p class="mt-2 text-sm">Rumania, Polonia y Portugal tienen altos índices de emigración, con ciudadanos buscando mejores oportunidades.</p>
+        <img src="./img/Pais.png" alt="Países europeos con mayor índice de emigración"
+          class="w-full h-40 object-cover rounded-lg mb-6">
+        <h2 class="text-lg font-bold">Países con más emigración</h2>
+        <p class="mt-2 text-base">Rumania, Polonia y Portugal destacan por su alta tasa de emigración.</p>
+        <a href="login.html" class="relative group inline-block mt-3 text-[#DADADA] font-semibold">
+          Leer más
+          <span
+            class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-100 transition-transform duration-300 group-hover:scale-x-0">
+          </span>
+        </a>
       </div>
-
-      <!-- Box 3: Consecuencias -->
       <div class="bg-[#2a454b] p-6 rounded-lg shadow-lg">
-        <img src="./img/_Con.jpg" alt="Consecuencias de la emigración en Europa" class="w-full h-40 object-cover rounded-lg mb-4">
-        <h2 class="text-xl font-bold">Consecuencias</h2>
-        <p class="mt-2 text-sm">La falta de trabajadores y el envejecimiento poblacional afectan a países con alta emigración.</p>
+        <img src="./img/_Con.jpg" alt="Consecuencias de la emigración en Europa"
+          class="w-full h-40 object-cover rounded-lg mb-6">
+        <h2 class="text-lg font-bold">Consecuencias</h2>
+        <p class="mt-2 text-base">La escasez de trabajadores y el envejecimiento afectan a varios países.</p>
+        <a href="login.html" class="relative group inline-block mt-3 text-[#DADADA] font-semibold">
+          Leer más
+          <span
+            class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-100 transition-transform duration-300 group-hover:scale-x-0">
+          </span>
+        </a>
       </div>
-
-      <!-- Box 4: Situación Actual -->
       <div class="bg-[#2a454b] p-6 rounded-lg shadow-lg">
-        <img src="./img/act.jpg" alt="Situación actual de la emigración en Europa" class="w-full h-40 object-cover rounded-lg mb-4">
-        <h2 class="text-xl font-bold">Situación actual</h2>
-        <p class="mt-2 text-sm">El teletrabajo y la globalización han cambiado las dinámicas de emigración en Europa.</p>
+        <img src="./img/act.jpg" alt="Situación actual de la emigración en Europa"
+          class="w-full h-40 object-cover rounded-lg mb-6">
+        <h2 class="text-lg font-bold">Situación actual</h2>
+        <p class="mt-2 text-base">El teletrabajo y la globalización han cambiado las dinámicas migratorias.</p>
+        <a href="login.html" class="relative group inline-block mt-3 text-[#DADADA] font-semibold">
+          Leer más
+          <span
+            class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-100 transition-transform duration-300 group-hover:scale-x-0">
+          </span>
+        </a>
       </div>
-
+    
     </section>
-
-    <!-- Large Information Box with Image -->
-    <section class="bg-[#223B46] p-8 rounded-lg shadow-lg mt-12">
+    <section class="max-w-[70%] mx-auto bg-[#223B46] p-8 rounded-lg shadow-lg mt-12">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <!-- Image -->
         <img src="./img/Imp.jpg" alt="Impacto de la emigración en Europa" class="w-full h-auto rounded-lg shadow-lg">
-        
-        <!-- Text Content -->
         <div>
           <h2 class="text-3xl font-bold mb-4">Impacto Económico y Social de la Emigración</h2>
           <p class="text-lg leading-relaxed">
-            La emigración masiva ha afectado a muchos países europeos, generando cambios significativos en sus economías y sociedades. 
-            La falta de trabajadores jóvenes ha impactado el crecimiento económico, mientras que la llegada de remesas desde el extranjero ha estabilizado algunas economías locales.
+            La emigración masiva ha afectado a muchos países europeos, generando cambios significativos en sus economías
+            y sociedades.
+            La falta de trabajadores jóvenes ha impactado el crecimiento económico, mientras que la llegada de remesas
+            desde el extranjero ha estabilizado algunas economías locales.
           </p>
           <p class="text-lg leading-relaxed mt-4">
-            A nivel social, las familias separadas por la emigración experimentan cambios en sus estructuras y roles. Mientras algunos migrantes logran mejorar su calidad de vida, otros enfrentan desafíos de integración en sus nuevos destinos.
+            A nivel social, las familias separadas por la emigración experimentan cambios en sus estructuras y roles.
+            Mientras algunos migrantes logran mejorar su calidad de vida, otros enfrentan desafíos de integración en sus
+            nuevos destinos.
           </p>
           <p class="text-lg leading-relaxed mt-4">
-            Los gobiernos europeos han implementado diversas políticas para gestionar la emigración y atraer talento, incluyendo incentivos para el retorno de ciudadanos y programas de integración laboral.
+            Los gobiernos europeos han implementado diversas políticas para gestionar la emigración y atraer talento,
+            incluyendo incentivos para el retorno de ciudadanos y programas de integración laboral.
           </p>
         </div>
       </div>
     </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="w-full bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861] text-[#DADADA] py-6 shadow-2xl shadow-black mt-8">
+  <footer
+    class="w-full bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861] text-[#DADADA] py-6 shadow-2xl shadow-black mt-8">
     <div class="container mx-auto text-center">
-      <p class="text-sm">© 2025 Proyecto 9 - Todos los derechos reservados.</p>
+      <p class="text-sm">© 2025 ME - Todos los derechos reservados.</p>
     </div>
   </footer>
 
