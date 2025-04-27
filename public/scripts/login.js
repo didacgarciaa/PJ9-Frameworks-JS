@@ -22,9 +22,9 @@ async function handleLogin(event) {
         console.log(localStorage.getItem('username')); // Should show the username
 
         if (user.role === 'admin') {
-            window.location.href = "../admin.html"; 
+            window.location.href = "/admin"; 
         } else if (user.role === 'cliente') {
-            window.location.href = "../client.html"; 
+            window.location.href = "/client"; 
             
         } else {
             showMessage("Rol no reconegut", messageElement); 
