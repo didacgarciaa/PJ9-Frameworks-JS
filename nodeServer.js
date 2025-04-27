@@ -180,6 +180,59 @@ const routeHandlers = {
       console.error('Error al crear usuario:', error);
       sendResponse(res, 500, { error: 'Error interno del servidor' });
     }
+  },
+  'DELETE /user/delete': async (req, res) => {
+    try {
+      const { name } = await parseBody(req);
+      
+      if (!name) {
+        return sendResponse(res, 400, { error: "Se requiere el nombre del usuario" });
+      }
+
+      const usersCollection = db.collection('Users-Collection');
+      const result = await usersCollection.deleteOne({ name });
+
+      if (result.deletedCount === 0) {
+        return sendResponse(res, 404, { error: 'Usuario no encontrado' });
+      }
+
+      sendResponse(res, 200, { message: 'Usuario eliminado exitosamente' });
+    } catch (error) {
+      console.error('Error al eliminar usuario:', error);
+      sendResponse(res, 500, { error: 'Error interno del servidor' });
+    }
+  },
+  'PUT /user/update': async (req, res) => {
+    try {
+      const { name, password, role } = await parseBody(req);
+      
+      if (!name) {
+        return sendResponse(res, 400, { error: "Se requiere el nombre del usuario" });
+      }
+
+      if (!password && !role) {
+        return sendResponse(res, 400, { error: "Se requiere al menos un campo para actualizar (contraseña o rol)" });
+      }
+
+      const updateFields = {};
+      if (password) updateFields.password = password;
+      if (role) updateFields.role = role;
+
+      const usersCollection = db.collection('Users-Collection');
+      const result = await usersCollection.updateOne(
+        { name },
+        { $set: updateFields }
+      );
+
+      if (result.matchedCount === 0) {
+        return sendResponse(res, 404, { error: 'Usuario no encontrado' });
+      }
+
+      sendResponse(res, 200, { message: 'Usuario actualizado exitosamente' });
+    } catch (error) {
+      console.error('Error al actualizar usuario:', error);
+      sendResponse(res, 500, { error: 'Error interno del servidor' });
+    }
   }
 };
 
