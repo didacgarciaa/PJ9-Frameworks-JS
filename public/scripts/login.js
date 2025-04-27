@@ -27,6 +27,7 @@ async function handleLogin(event) {
             window.location.href = "/client"; 
             
         } else {
+            console.log(user.role);
             showMessage("Rol no reconegut", messageElement); 
         }
     } catch (error) {
