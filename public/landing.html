@@ -9,89 +9,145 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861] min-h-screen flex flex-col font-sans text-[#DADADA]">
+<body
+  class="bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861] min-h-screen flex flex-col font-sans text-[#DADADA]"
+  style="font-family: 'Montserrat', sans-serif;">
 
-  <!-- Header -->
-  <header class="fixed top-0 left-0 w-full shadow-md z-10 p-4 bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861]">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-xl font-bold">Migración en Europa</h1>
-      <button onclick="window.location.href='/login'" class="bg-[#DADADA] text-[#2A454B] font-semibold py-2 px-4 rounded-2xl transition duration-300 hover:bg-opacity-60">
-        Login
-      </button>
+  <header class="bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861] fixed top-0 left-0 w-full shadow-md z-10 p-4">
+    <div class="flex justify-between items-center max-w-4xl mx-auto text-[#DADADA]">
+      <a href="landing.html" class="">ME</a>
+      <ul class="flex space-x-4">
+        <li>
+          <a href="#" class="relative group">
+            Abu
+            <span
+              class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="relative group">
+            Cesc
+            <span
+              class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="relative group">
+            André
+            <span
+              class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="relative group">
+            Dídac
+            <span
+              class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+          </a>
+        </li>
+      </ul>
     </div>
   </header>
-
-  <!-- Main Content -->
-  <main class="container mx-auto text-center mt-24 p-6">
-
-    <!-- Welcome Section -->
-    <section class="bg-[#2a454b] p-6 rounded-lg shadow-lg">
-      <h1 class="text-4xl font-bold mb-4">Bienvenido al análisis sobre migración en Europa</h1>
-      <p class="text-lg">Este proyecto analiza cómo la migración ha impactado a los países europeos en los últimos años, explorando sus causas, efectos y tendencias.</p>
-    </section>
-
-    <!-- Information Boxes -->
-    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-
-      <!-- Box 1: Causas -->
-      <div class="bg-[#2a454b] p-6 rounded-lg shadow-lg">
-        <img src="./img/Causa.png" alt="Factores que causan la emigración en Europa" class="w-full h-40 object-cover rounded-lg mb-4">
-        <h2 class="text-xl font-bold">Causas</h2>
-        <p class="mt-2 text-sm">Crisis económica, conflictos políticos y falta de empleo en algunos países europeos han impulsado la emigración.</p>
-      </div>
-
-      <!-- Box 2: Países con Mayor Emigración -->
-      <div class="bg-[#2a454b] p-6 rounded-lg shadow-lg">
-        <img src="./img/Pais.png" alt="Países europeos con mayor índice de emigración" class="w-full h-40 object-cover rounded-lg mb-4">
-        <h2 class="text-xl font-bold">Países con más emigración</h2>
-        <p class="mt-2 text-sm">Rumania, Polonia y Portugal tienen altos índices de emigración, con ciudadanos buscando mejores oportunidades.</p>
-      </div>
-
-      <!-- Box 3: Consecuencias -->
-      <div class="bg-[#2a454b] p-6 rounded-lg shadow-lg">
-        <img src="./img/_Con.jpg" alt="Consecuencias de la emigración en Europa" class="w-full h-40 object-cover rounded-lg mb-4">
-        <h2 class="text-xl font-bold">Consecuencias</h2>
-        <p class="mt-2 text-sm">La falta de trabajadores y el envejecimiento poblacional afectan a países con alta emigración.</p>
-      </div>
-
-      <!-- Box 4: Situación Actual -->
-      <div class="bg-[#2a454b] p-6 rounded-lg shadow-lg">
-        <img src="./img/act.jpg" alt="Situación actual de la emigración en Europa" class="w-full h-40 object-cover rounded-lg mb-4">
-        <h2 class="text-xl font-bold">Situación actual</h2>
-        <p class="mt-2 text-sm">El teletrabajo y la globalización han cambiado las dinámicas de emigración en Europa.</p>
-      </div>
-
-    </section>
-
-    <!-- Large Information Box with Image -->
-    <section class="bg-[#223B46] p-8 rounded-lg shadow-lg mt-12">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <!-- Image -->
-        <img src="./img/Imp.jpg" alt="Impacto de la emigración en Europa" class="w-full h-auto rounded-lg shadow-lg">
+    <section class="relative w-screen h-screen flex items-center justify-center text-center">
+      <div class="absolute inset-0 bg-[url('./img/migracion2.png')] bg-cover bg-center w-full h-full"></div>
+      <div class="absolute inset-0 bg-black bg-opacity-50 w-full h-full"></div>
+      <div class="relative text-[#DADADA] px-6">
+        <h1 class="text-6xl font-extrabold mb-14">Migració a Europa</h1>
+        <p class="text-xl mb-6 max-w-3xl mx-auto">
+          La migració ha transformat Europa, influenciant la seva economia, cultura i societat. 
+          Milions de persones han deixat els seus països a la recerca d'oportunitats, generant canvis a gran escala.
+        </p>
+        <button onclick="window.location.href='login.html'" class="w-40 group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-[#DADADA] px-6 font-semibold text-[#2A454B] shadow-lg">
+          <span>
+            Apren més
+          </span>
+          <div class="w-0 translate-x-[100%] pl-0 opacity-0 transition-all duration-200 group-hover:w-5 group-hover:translate-x-0 group-hover:pl-1 group-hover:opacity-100">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#2A454B]">
+              <path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+        </button>
         
-        <!-- Text Content -->
+      </div>
+    </section>
+    <section class="max-w-[70%] mx-auto mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-[#2A454B] p-6 rounded-lg shadow-lg">
+        <img src="./img/Causa.png" alt="Factores que causan la emigración en Europa"
+          class="w-full h-40 object-cover rounded-lg mb-6">
+          <h2 class="text-lg font-bold">Causes</h2>
+          <p class="mt-2 text-base">Factors com la crisi econòmica i els conflictes polítics impulsen l'emigració.</p>
+        <a href="login.html" class="relative group inline-block mt-3 text-[#DADADA] font-semibold">
+          Llegir més
+          <span
+            class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-100 transition-transform duration-300 group-hover:scale-x-0">
+          </span>
+        </a>
+      </div>
+      <div class="bg-[#2A454B] p-6 rounded-lg shadow-lg">
+        <img src="./img/Pais.png" alt="Países europeos con mayor índice de emigración"
+          class="w-full h-40 object-cover rounded-lg mb-6">
+          <h2 class="text-lg font-bold">Països amb més emigració</h2>
+          <p class="mt-2 text-base">Romania, Polònia i Portugal destaquen per la seva alta taxa d'emigració.</p>
+        <a href="login.html" class="relative group inline-block mt-3 text-[#DADADA] font-semibold">
+          Llegir més
+          <span
+            class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-100 transition-transform duration-300 group-hover:scale-x-0">
+          </span>
+        </a>
+      </div>
+      <div class="bg-[#2A454B] p-6 rounded-lg shadow-lg">
+        <img src="./img/_Con.jpg" alt="Consecuencias de la emigración en Europa"
+          class="w-full h-40 object-cover rounded-lg mb-6">
+          <h2 class="text-lg font-bold">Conseqüències</h2>
+          <p class="mt-2 text-base">L'escassetat de treballadors i l'envelliment afecten diversos països.</p>
+        <a href="login.html" class="relative group inline-block mt-3 text-[#DADADA] font-semibold">
+          Llegir més
+          <span
+            class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-100 transition-transform duration-300 group-hover:scale-x-0">
+          </span>
+        </a>
+      </div>
+      <div class="bg-[#2A454B] p-6 rounded-lg shadow-lg">
+        <img src="./img/act.jpg" alt="Situación actual de la emigración en Europa"
+          class="w-full h-40 object-cover rounded-lg mb-6">
+          <h2 class="text-lg font-bold">Situació actual</h2>
+          <p class="mt-2 text-base">El teletreball i la globalització han canviat les dinàmiques migratòries.</p>
+        <a href="login.html" class="relative group inline-block mt-3 text-[#DADADA] font-semibold">
+          Llegir més
+          <span
+            class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-100 transition-transform duration-300 group-hover:scale-x-0">
+          </span>
+        </a>
+      </div>
+    
+    </section>
+    <section class="max-w-[70%] mx-auto bg-[#223B46] p-8 rounded-lg shadow-lg mt-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <img src="./img/Imp.jpg" alt="Impacto de la emigración en Europa" class="w-full h-auto rounded-lg shadow-lg">
         <div>
-          <h2 class="text-3xl font-bold mb-4">Impacto Económico y Social de la Emigración</h2>
+          <h2 class="text-3xl font-bold mb-4">Impacte Econòmic i Social de l'Emigració</h2>
           <p class="text-lg leading-relaxed">
-            La emigración masiva ha afectado a muchos países europeos, generando cambios significativos en sus economías y sociedades. 
-            La falta de trabajadores jóvenes ha impactado el crecimiento económico, mientras que la llegada de remesas desde el extranjero ha estabilizado algunas economías locales.
+            L'emigració massiva ha afectat molts països europeus, generant canvis significatius en les seves economies
+            i societats.
+            La manca de treballadors joves ha impactat el creixement econòmic, mentre que l'arribada de remeses
+            des de l'estranger ha estabilitzat algunes economies locals.
           </p>
           <p class="text-lg leading-relaxed mt-4">
-            A nivel social, las familias separadas por la emigración experimentan cambios en sus estructuras y roles. Mientras algunos migrantes logran mejorar su calidad de vida, otros enfrentan desafíos de integración en sus nuevos destinos.
+            A nivell social, les famílies separades per l'emigració experimenten canvis en les seves estructures i rols.
+            Mentre que alguns migrants aconsegueixen millorar la seva qualitat de vida, d'altres s'enfronten a desafiaments d'integració en els seus
+            nous destins.
           </p>
           <p class="text-lg leading-relaxed mt-4">
-            Los gobiernos europeos han implementado diversas políticas para gestionar la emigración y atraer talento, incluyendo incentivos para el retorno de ciudadanos y programas de integración laboral.
+            Els governs europeus han implementat diverses polítiques per gestionar l'emigració i atreure talent,
+            incloent incentius per al retorn de ciutadans i programes d'integració laboral.
           </p>
         </div>
       </div>
     </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="w-full bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861] text-[#DADADA] py-6 shadow-2xl shadow-black mt-8">
+  <footer
+    class="w-full bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861] text-[#DADADA] py-6 shadow-2xl shadow-black mt-8">
     <div class="container mx-auto text-center">
-      <p class="text-sm">© 2025 Proyecto 9 - Todos los derechos reservados.</p>
+      <p class="text-sm">© 2025 ME - Todos los derechos reservados.</p>
     </div>
   </footer>
 
