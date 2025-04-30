@@ -119,6 +119,7 @@ const renderPugTemplate = (res, templatePath) => {
 const routeHandlers = {
   'GET /': (req, res) => renderPugTemplate(res, 'public/landing.pug'),
   'GET /login': (req, res) => renderPugTemplate(res, 'public/login.pug'),
+  'GET /vue-migration': (req, res) => renderPugTemplate(res, 'public/vue-migration.pug'),
   'GET /admin': (req, res) => renderPugTemplate(res, 'public/admin.pug'),
   'GET /client': (req, res) => renderPugTemplate(res, 'public/client.pug'),
   'GET /dragndrop': (req, res) => renderPugTemplate(res, 'public/drag&drop.pug'),

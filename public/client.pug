@@ -4,6 +4,7 @@ html(lang="es")
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title Página de Inicio
+    link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet")
     script(src="https://cdn.tailwindcss.com")
     script(src="https://cdn.canvasjs.com/canvasjs.min.js")
     script(src="ClientUi.js")
@@ -12,32 +13,32 @@ html(lang="es")
         font-family: 'Montserrat', sans-serif;
       }
 
-  header(class="bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861] fixed top-0 left-0 w-full shadow-md z-10 p-4")
-    div(class="flex justify-between items-center max-w-4xl mx-auto text-[#DADADA]")
-      h1 ME
-      ul(class="flex space-x-4")
-        li
-          a(href="#" class="relative group")
-            | Abu
-            span(class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100")
-        li
-          a(href="#" class="relative group")
-            | Cesc
-            span(class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100")
-        li
-          a(href="#" class="relative group")
-            | André
-            span(class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100")
-        li
-          a(href="#" class="relative group")
-            | Didac
-            span(class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100")
-        li
-          a(href="#" class="relative group")
-            | Contacto
-            span(class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100")
-
   body(class="bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861]")
+    header(class="bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861] fixed top-0 left-0 w-full shadow-md z-10 p-4")
+      div(class="flex justify-between items-center max-w-4xl mx-auto text-[#DADADA]")
+        h1 ME
+        ul(class="flex space-x-4")
+          li
+            a(href="#" class="relative group")
+              | Abu
+              span(class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100")
+          li
+            a(href="#" class="relative group")
+              | Cesc
+              span(class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100")
+          li
+            a(href="#" class="relative group")
+              | André
+              span(class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100")
+          li
+            a(href="#" class="relative group")
+              | Didac
+              span(class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100")
+          li
+            a(href="#" class="relative group")
+              | Contacto
+              span(class="absolute left-0 -bottom-1 block h-0.5 w-full bg-[#DADADA] scale-x-0 transition-transform duration-300 group-hover:scale-x-100")
+
     div(class="min-h-screen flex justify-center pt-20 font-sans")
       div(class="px-8 pt-6 pb-8 mb-4 rounded-lg max-w-4xl w-full")
         h1(class="text-4xl font-bold text-[#DADADA] mb-6") La Crisis de la Migración Negativa en Europa
@@ -50,18 +51,18 @@ html(lang="es")
         div(id="resumen" class="mb-6")
           p(class="text-[#DADADA] text-lg") En 2023, la UE registró 3,7 millones de migrantes legales y 385,000 migrantes irregulares. Se presentaron más de 1 millón de solicitudes de asilo, siendo Alemania, España, Francia e Italia los principales receptores. Siria, Afganistán, Turquía, Venezuela y Colombia fueron los países de origen más comunes de los solicitantes. Los refugiados constituyen hasta el 1.5% de la población de la UE, con Alemania liderando en concesión de asilo. La UE ha destinado 22,700 millones de euros para gestión migratoria en 2021-2027.
       
-        div(id="chartContainer" class="mb-6" style="height: 370px; width: 100%;")
+        div(id="chartContainer" class="mb-6 rounded-lg p-4" style="height: 370px; width: 100%;")
         
-        div(id="barChart" class="mb-6" style="height: 370px; width: 100%;")
+        div(id="barChart" class="mb-6 rounded-lg p-4" style="height: 370px; width: 100%;")
         p(class="text-[#DADADA] text-lg mb-6") Este gráfico muestra la cantidad de personas que emigran en comparación con las que llegan a distintos países europeos. Se puede observar que en muchas regiones hay una tendencia creciente de emigración, lo que genera un impacto significativo en la demografía y la economía.
         
-        div(id="lineChart" class="mb-6" style="height: 370px; width: 100%;")
+        div(id="lineChart" class="mb-6 rounded-lg p-4" style="height: 370px; width: 100%;")
         p(class="text-[#DADADA] text-lg mb-6") El siguiente gráfico muestra la tendencia de la población en declive a lo largo del tiempo. La disminución de la población en muchos países europeos es una señal de alerta para el futuro del crecimiento económico y la sostenibilidad de los sistemas de bienestar.
 
         div(class="mb-6")
           h2(class="text-4xl font-bold text-[#DADADA] mb-6") Datos Clave
          
-        div(class="px-8 pt-6 pb-8 mb-4 flex flex-col items-center w-full mt-6 max-w-3xl text-center")
+        div(class="px-8 pt-6 pb-8 mb-4 flex flex-col items-center w-full mt-6 max-w-3xl text-center mx-auto")
           h1(class="text-4xl font-bold text-[#DADADA] mb-6") La Crisis de la Migración Negativa en Europa
           p(class="text-[#DADADA] text-lg mb-6")
             | La inmigración negativa ocurre cuando más personas emigran de un país de las que ingresan. Este fenómeno afecta la economía, el mercado laboral y el sistema de pensiones, poniendo en riesgo el crecimiento de muchas naciones europeas.
@@ -77,60 +78,173 @@ html(lang="es")
         )
 
         div
-          a(href="drag&drop.html") qwe
+          a(href="/dragndrop" class="text-[#DADADA] underline") Juego - Paises con mas emigración
       
-        script.
-          async function loadChartData() {
-              const response = await fetch('/data/data.json');
-              const data = await response.json();
-  
-              new CanvasJS.Chart("barChart", {
-                  animationEnabled: true,
-                  theme: "light2",
-                  title: { text: "Personas que emigran vs. llegan" },
-                  axisY: { title: "Cantidad de Personas" },
-                  data: [
-                      { type: "column", name: "Emigran", showInLegend: true, dataPoints: data.barChart.datasets[0].data.map((val, i) => ({ label: data.barChart.labels[i], y: val })) },
-                      { type: "column", name: "Llegan", showInLegend: true, dataPoints: data.barChart.datasets[1].data.map((val, i) => ({ label: data.barChart.labels[i], y: val })) }
-                  ]
-              }).render();
-      
-              new CanvasJS.Chart("lineChart", {
-                  animationEnabled: true,
-                  theme: "light2",
-                  title: { text: "Tendencia de la población en declive" },
-                  axisY: { title: "Población" },
-                  data: data.lineChart.datasets.map(dataset => ({
-                      type: "line",
-                      showInLegend: true,
-                      name: dataset.label,
-                      dataPoints: dataset.data.map((val, i) => ({ label: data.lineChart.labels[i], y: val }))
-                  }))
-              }).render();
-          }
-      
-          window.onload = function () {
-              var chart = new CanvasJS.Chart("chartContainer", {
-                  animationEnabled: true,
-                  title: {
-                      text: "Solicitudes de Asilo en la UE (2023)"
-                  },
-                  data: [{
-                      type: "column",
-                      dataPoints: [
-                          { label: "Alemania", y: 31.4 },
-                          { label: "España", y: 15.3 },
-                          { label: "Francia", y: 13.8 },
-                          { label: "Italia", y: 12.4 },
-                          { label: "Otros", y: 27.1 }
-                      ]
-                  }]
-              });
-              chart.render();
-                  
-              loadChartData();
-          }
+    footer(class="w-full pt-20 bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861] text-[#DADADA] py-6 mt-8 shadow-2xl shadow-black")
+      div(class="max-w-4xl mx-auto text-center")
+        p(class="text-sm") © 2025 ME. Todos los derechos reservados.
 
-  footer(class="w-full pt-20 bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861] text-[#DADADA] py-6 mt-8 shadow-2xl shadow-black")
-    div(class="max-w-4xl mx-auto text-center")
-      p(class="text-sm") © 2025 ME. Todos los derechos reservados.
+    script.
+      window.onload = async function() {
+        try {
+          const chartData = {
+            barChart: {
+              labels: ["España", "Italia", "Alemania", "Francia", "Grecia"],
+              datasets: [
+                {
+                  label: "Personas que emigran",
+                  data: [500000, 450000, 600000, 300000, 250000],
+                  backgroundColor: "rgba(255, 99, 132, 0.5)"
+                },
+                {
+                  label: "Personas que llegan",
+                  data: [200000, 150000, 300000, 100000, 80000],
+                  backgroundColor: "rgba(54, 162, 235, 0.5)"
+                }
+              ]
+            },
+            lineChart: {
+              labels: ["2000", "2005", "2010", "2015", "2020"],
+              datasets: [
+                {
+                  label: "Población de Italia",
+                  data: [57000000, 56000000, 55000000, 54000000, 53000000],
+                  borderColor: "rgba(255, 206, 86, 1)",
+                  fill: false
+                },
+                {
+                  label: "Población de España",
+                  data: [46000000, 45000000, 44000000, 43000000, 42000000],
+                  borderColor: "rgba(75, 192, 192, 1)",
+                  fill: false
+                },
+                {
+                  label: "Población de Alemania",
+                  data: [82000000, 81000000, 80000000, 79000000, 78000000],
+                  borderColor: "rgba(153, 102, 255, 1)",
+                  fill: false
+                }
+              ]
+            }
+          };
+
+          console.log("Datos cargados:", chartData);
+          
+          var asylumChart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            backgroundColor: "transparent",
+            theme: "light2",
+            title: {
+              text: "Solicitudes de Asilo en la UE (2023)",
+              fontColor: "#DADADA"
+            },
+            axisY: {
+              title: "Cantidad (%)",
+              titleFontColor: "#DADADA",
+              labelFontColor: "#DADADA"
+            },
+            axisX: {
+              labelFontColor: "#DADADA"
+            },
+            data: [{
+              color: "#50C878",
+              type: "column",
+              dataPoints: [
+                { label: "Alemania", y: 31.4 },
+                { label: "España", y: 15.3 },
+                { label: "Francia", y: 13.8 },
+                { label: "Italia", y: 12.4 },
+                { label: "Otros", y: 27.1 }
+              ]
+            }]
+          });
+          asylumChart.render();
+          
+          if (!chartData || !chartData.barChart || !chartData.lineChart) {
+            throw new Error("Los datos de los gráficos no tienen el formato esperado");
+          }
+          
+          var barChart = new CanvasJS.Chart("barChart", {
+            animationEnabled: true,
+            theme: "light2",
+            backgroundColor: "transparent",
+            title: {
+              text: "Personas que emigran vs. llegan",
+              fontColor: "#DADADA"
+            },
+            legend: {
+              fontColor: "#DADADA"
+            },
+            axisY: {
+              title: "Cantidad de Personas",
+              titleFontColor: "#DADADA",
+              labelFontColor: "#DADADA"
+            },
+            axisX: {
+              labelFontColor: "#DADADA"
+            },
+            data: [
+              {
+                color: "#50C878",
+                type: "column",
+                name: "Emigran",
+                showInLegend: true,
+                dataPoints: chartData.barChart.labels.map((label, i) => ({
+                  label: label,
+                  y: chartData.barChart.datasets[0].data[i]
+                }))
+              },
+              {
+                color: "#4682B4",
+                type: "column",
+                name: "Llegan",
+                showInLegend: true,
+                dataPoints: chartData.barChart.labels.map((label, i) => ({
+                  label: label,
+                  y: chartData.barChart.datasets[1].data[i]
+                }))
+              }
+            ]
+          });
+          barChart.render();
+          
+          var lineChart = new CanvasJS.Chart("lineChart", {
+            animationEnabled: true,
+            theme: "light2",
+            backgroundColor: "transparent",
+            title: {
+              text: "Tendencia de la población en declive",
+              fontColor: "#DADADA"
+            },
+            legend: {
+              fontColor: "#DADADA"
+            },
+            axisY: {
+              title: "Población",
+              titleFontColor: "#DADADA",
+              labelFontColor: "#DADADA"
+            },
+            axisX: {
+              labelFontColor: "#DADADA"
+            },
+            data: chartData.lineChart.datasets.map((dataset, index) => {
+              const colors = ["#50C878", "#50C878", "#50C878"];
+              return {
+                type: "line",
+                showInLegend: true,
+                name: dataset.label,
+                color: colors[index % colors.length],
+                dataPoints: chartData.lineChart.labels.map((label, i) => ({
+                  label: label,
+                  y: dataset.data[i]
+                }))
+              };
+            })
+          });
+          lineChart.render();
+          
+          console.log("Gráficos renderizados exitosamente");
+        } catch (error) {
+          console.error("Error al renderizar los gráficos:", error);
+        }
+      };
