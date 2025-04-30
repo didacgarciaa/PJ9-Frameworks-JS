@@ -1,9 +1,9 @@
 doctype html
-html(lang="es")
+html(lang="ca")
   head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title Proyecto 9 - Migración en Europa
+    title Projecte 9 - Migració a Europa
     script(src="https://cdn.tailwindcss.com")
     link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet")
     script(src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js")
@@ -12,13 +12,13 @@ html(lang="es")
     div(id="app")
       header(class="fixed top-0 left-0 w-full shadow-md z-10 p-4 bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861]")
         div(class="container mx-auto flex justify-between items-center")
-          h1(class="text-xl font-bold") Migración en Europa
-          button(class="bg-[#DADADA] text-[#2A454B] font-semibold py-2 px-4 rounded-2xl transition duration-300 hover:bg-opacity-60" @click="navigateToLogin") Login
+          h1(class="text-xl font-bold") Migració a Europa
+          button(class="bg-[#DADADA] text-[#2A454B] font-semibold py-2 px-4 rounded-2xl transition duration-300 hover:bg-opacity-60" @click="navigateToLogin") Inicia sessió
 
       main(class="container mx-auto text-center mt-24 p-6")
         section(class="bg-[#2a454b] p-6 rounded-lg shadow-lg")
-          h1(class="text-4xl font-bold mb-4") Bienvenido al análisis sobre migración en Europa
-          p(class="text-lg") Este proyecto analiza cómo la migración ha impactado a los países europeos en los últimos años, explorando sus causas, efectos y tendencias.
+          h1(class="text-4xl font-bold mb-4") Benvingut a l'anàlisi sobre migració a Europa
+          p(class="text-lg") Aquest projecte analitza com la migració ha impactat els països europeus en els últims anys, explorant-ne les causes, efectes i tendències.
 
         section(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8")
           div(v-for="(card, index) in informationCards" :key="index" class="bg-[#2a454b] p-6 rounded-lg shadow-lg")
@@ -26,19 +26,18 @@ html(lang="es")
             h2(class="text-xl font-bold") {{ card.title }}
             p(class="mt-2 text-sm") {{ card.description }}
 
-        button(class="bg-[#DADADA] text-[#2A454B] font-semibold py-2 px-4 rounded-2xl transition duration-300 hover:bg-opacity-60 mt-8" @click="navigateToDetail") Ver más
+        button(class="bg-[#DADADA] text-[#2A454B] font-semibold py-2 px-4 rounded-2xl transition duration-300 hover:bg-opacity-60 mt-8" @click="navigateToDetail") Veure més
         
         section(class="bg-[#223B46] p-8 rounded-lg shadow-lg mt-12")
           div(class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center")
-            img(src="./img/Imp.jpg" alt="Impacto de la emigración en Europa" class="w-full h-auto rounded-lg shadow-lg")
+            img(src="./img/Imp.jpg" alt="Impacte de l'emigració a Europa" class="w-full h-auto rounded-lg shadow-lg")
             div
-              h2(class="text-3xl font-bold mb-4") Impacto Económico y Social de la Emigración
-              p(class="text-lg leading-relaxed") La emigración masiva ha afectado a muchos países europeos, generando cambios significativos en sus economías y sociedades. La falta de trabajadores jóvenes ha impactado el crecimiento económico, mientras que la llegada de remesas desde el extranjero ha estabilizado algunas economías locales.
-              p(class="text-lg leading-relaxed mt-4") A nivel social, las familias separadas por la emigración experimentan cambios en sus estructuras y roles. Mientras algunos migrantes logran mejorar su calidad de vida, otros enfrentan desafíos de integración en sus nuevos destinos.
-              p(class="text-lg leading-relaxed mt-4") Los gobiernos europeos han implementado diversas políticas para gestionar la emigración y atraer talento, incluyendo incentivos para el retorno de ciudadanos y programas de integración laboral.
+              h2(class="text-3xl font-bold mb-4") Impacte Econòmic i Social de l'Emigració
+              p(class="text-lg leading-relaxed") L'emigració massiva ha afectat molts països europeus, generant canvis significatius en les seves economies i societats. La manca de treballadors joves ha impactat el creixement econòmic, mentre que l'arribada de remeses des de l'estranger ha estabilitzat algunes economies locals.
+              p(class="text-lg leading-relaxed mt-4") A nivell social, les famílies separades per l'emigració experimenten canvis en les seves estructures i rols. Mentre alguns migrants aconsegueixen millorar la seva qualitat de vida, altres afronten desafiaments d'integració als seus nous destins.
+              p(class="text-lg leading-relaxed mt-4") Els governs europeus han implementat diverses polítiques per gestionar l'emigració i atreure talent, incloent-hi incentius per al retorn de ciutadans i programes d'integració laboral.
 
       footer(class="w-full bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861] text-[#DADADA] py-6 shadow-2xl shadow-black mt-8")
         div(class="container mx-auto text-center")
-          p(class="text-sm") © {{ currentYear }} Proyecto 9 - Todos los derechos reservados.
+          p(class="text-sm") © {{ currentYear }} Projecte 9 - Tots els drets reservats.
 script(src="/scripts/landing.js")
-  
