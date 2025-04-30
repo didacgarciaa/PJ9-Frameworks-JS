@@ -6,48 +6,39 @@ html(lang="es")
     title Proyecto 9 - Migración en Europa
     script(src="https://cdn.tailwindcss.com")
     link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet")
+    script(src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js")
 
   body(class="bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861] min-h-screen flex flex-col font-sans text-[#DADADA]")
-    header(class="fixed top-0 left-0 w-full shadow-md z-10 p-4 bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861]")
-      div(class="container mx-auto flex justify-between items-center")
-        h1(class="text-xl font-bold") Migración en Europa
-        button(onclick="window.location.href='/login'" class="bg-[#DADADA] text-[#2A454B] font-semibold py-2 px-4 rounded-2xl transition duration-300 hover:bg-opacity-60") Login
+    div(id="app")
+      header(class="fixed top-0 left-0 w-full shadow-md z-10 p-4 bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861]")
+        div(class="container mx-auto flex justify-between items-center")
+          h1(class="text-xl font-bold") Migración en Europa
+          button(class="bg-[#DADADA] text-[#2A454B] font-semibold py-2 px-4 rounded-2xl transition duration-300 hover:bg-opacity-60" @click="navigateToLogin") Login
 
-    main(class="container mx-auto text-center mt-24 p-6")
-      section(class="bg-[#2a454b] p-6 rounded-lg shadow-lg")
-        h1(class="text-4xl font-bold mb-4") Bienvenido al análisis sobre migración en Europa
-        p(class="text-lg") Este proyecto analiza cómo la migración ha impactado a los países europeos en los últimos años, explorando sus causas, efectos y tendencias.
+      main(class="container mx-auto text-center mt-24 p-6")
+        section(class="bg-[#2a454b] p-6 rounded-lg shadow-lg")
+          h1(class="text-4xl font-bold mb-4") Bienvenido al análisis sobre migración en Europa
+          p(class="text-lg") Este proyecto analiza cómo la migración ha impactado a los países europeos en los últimos años, explorando sus causas, efectos y tendencias.
 
-      section(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8")
-        div(class="bg-[#2a454b] p-6 rounded-lg shadow-lg")
-          img(src="./img/Causa.png" alt="Factores que causan la emigración en Europa" class="w-full h-40 object-cover rounded-lg mb-4")
-          h2(class="text-xl font-bold") Causas
-          p(class="mt-2 text-sm") Crisis económica, conflictos políticos y falta de empleo en algunos países europeos han impulsado la emigración.
+        section(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8")
+          div(v-for="(card, index) in informationCards" :key="index" class="bg-[#2a454b] p-6 rounded-lg shadow-lg")
+            img(:src="card.image" :alt="card.alt" class="w-full h-40 object-cover rounded-lg mb-4")
+            h2(class="text-xl font-bold") {{ card.title }}
+            p(class="mt-2 text-sm") {{ card.description }}
 
-        div(class="bg-[#2a454b] p-6 rounded-lg shadow-lg")
-          img(src="./img/Pais.png" alt="Países europeos con mayor índice de emigración" class="w-full h-40 object-cover rounded-lg mb-4")
-          h2(class="text-xl font-bold") Países con más emigración
-          p(class="mt-2 text-sm") Rumania, Polonia y Portugal tienen altos índices de emigración, con ciudadanos buscando mejores oportunidades.
+        button(class="bg-[#DADADA] text-[#2A454B] font-semibold py-2 px-4 rounded-2xl transition duration-300 hover:bg-opacity-60 mt-8" @click="navigateToDetail") Ver más
+        
+        section(class="bg-[#223B46] p-8 rounded-lg shadow-lg mt-12")
+          div(class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center")
+            img(src="./img/Imp.jpg" alt="Impacto de la emigración en Europa" class="w-full h-auto rounded-lg shadow-lg")
+            div
+              h2(class="text-3xl font-bold mb-4") Impacto Económico y Social de la Emigración
+              p(class="text-lg leading-relaxed") La emigración masiva ha afectado a muchos países europeos, generando cambios significativos en sus economías y sociedades. La falta de trabajadores jóvenes ha impactado el crecimiento económico, mientras que la llegada de remesas desde el extranjero ha estabilizado algunas economías locales.
+              p(class="text-lg leading-relaxed mt-4") A nivel social, las familias separadas por la emigración experimentan cambios en sus estructuras y roles. Mientras algunos migrantes logran mejorar su calidad de vida, otros enfrentan desafíos de integración en sus nuevos destinos.
+              p(class="text-lg leading-relaxed mt-4") Los gobiernos europeos han implementado diversas políticas para gestionar la emigración y atraer talento, incluyendo incentivos para el retorno de ciudadanos y programas de integración laboral.
 
-        div(class="bg-[#2a454b] p-6 rounded-lg shadow-lg")
-          img(src="./img/_Con.jpg" alt="Consecuencias de la emigración en Europa" class="w-full h-40 object-cover rounded-lg mb-4")
-          h2(class="text-xl font-bold") Consecuencias
-          p(class="mt-2 text-sm") La falta de trabajadores y el envejecimiento poblacional afectan a países con alta emigración.
-
-        div(class="bg-[#2a454b] p-6 rounded-lg shadow-lg")
-          img(src="./img/act.jpg" alt="Situación actual de la emigración en Europa" class="w-full h-40 object-cover rounded-lg mb-4")
-          h2(class="text-xl font-bold") Situación actual
-          p(class="mt-2 text-sm") El teletrabajo y la globalización han cambiado las dinámicas de emigración en Europa.
-      button(onclick="window.location.href='vue-migration'" class="bg-[#DADADA] text-[#2A454B] font-semibold py-2 px-4 rounded-2xl transition duration-300 hover:bg-opacity-60 mt-8") Ver más
-      section(class="bg-[#223B46] p-8 rounded-lg shadow-lg mt-12")
-        div(class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center")
-          img(src="./img/Imp.jpg" alt="Impacto de la emigración en Europa" class="w-full h-auto rounded-lg shadow-lg")
-          div
-            h2(class="text-3xl font-bold mb-4") Impacto Económico y Social de la Emigración
-            p(class="text-lg leading-relaxed") La emigración masiva ha afectado a muchos países europeos, generando cambios significativos en sus economías y sociedades. La falta de trabajadores jóvenes ha impactado el crecimiento económico, mientras que la llegada de remesas desde el extranjero ha estabilizado algunas economías locales.
-            p(class="text-lg leading-relaxed mt-4") A nivel social, las familias separadas por la emigración experimentan cambios en sus estructuras y roles. Mientras algunos migrantes logran mejorar su calidad de vida, otros enfrentan desafíos de integración en sus nuevos destinos.
-            p(class="text-lg leading-relaxed mt-4") Los gobiernos europeos han implementado diversas políticas para gestionar la emigración y atraer talento, incluyendo incentivos para el retorno de ciudadanos y programas de integración laboral.
-
-    footer(class="w-full bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861] text-[#DADADA] py-6 shadow-2xl shadow-black mt-8")
-      div(class="container mx-auto text-center")
-        p(class="text-sm") © 2025 Proyecto 9 - Todos los derechos reservados.
+      footer(class="w-full bg-gradient-to-r from-[#0e1c26] via-[#2a454b] to-[#294861] text-[#DADADA] py-6 shadow-2xl shadow-black mt-8")
+        div(class="container mx-auto text-center")
+          p(class="text-sm") © {{ currentYear }} Proyecto 9 - Todos los derechos reservados.
+script(src="/scripts/landing.js")
+  
